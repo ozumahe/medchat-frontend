@@ -1,0 +1,47 @@
+[
+  {
+    "id": "2a26c475-7cdf-43a3-b500-1b0c0e35235f",
+    "userId": "ffe25dbe-29ea-4759-8461-ed116f6739dd",
+    "name": "Abuja",
+    "transactionId": "LC-000005",
+    "serialId": 5,
+    "createdAt": "2022-07-26T15:40:08.043Z",
+    "updatedAt": "2022-07-26T15:40:08.075Z"
+  },
+  {
+    "id": "dbd4fad4-cd87-4af8-ad74-cffc585f84a6",
+    "userId": "15a6034d-39a2-4056-848a-705959c8c368",
+    "name": "Lagos",
+    "transactionId": "LC-4",
+    "serialId": 4,
+    "createdAt": "2022-07-05T09:12:37.031Z",
+    "updatedAt": "2022-07-05T09:12:37.036Z"
+  },
+  {
+    "id": "a8709ab0-b583-4538-a165-fe158ba19b16",
+    "userId": "ffe25dbe-29ea-4759-8461-ed116f6739dd",
+    "name": "Location 3",
+    "transactionId": "MMFRQ-3",
+    "serialId": 3,
+    "createdAt": "2022-06-21T08:37:29.426Z",
+    "updatedAt": "2022-06-21T08:37:29.432Z"
+  },
+  {
+    "id": "137d50b3-6a43-497d-b815-2971e8e56acc",
+    "userId": "ffe25dbe-29ea-4759-8461-ed116f6739dd",
+    "name": "Location 2",
+    "transactionId": "MMFRQ-2",
+    "serialId": 2,
+    "createdAt": "2022-06-21T08:35:59.684Z",
+    "updatedAt": "2022-06-21T08:37:22.687Z"
+  },
+  {
+    "id": "ece858c0-f3e6-4e30-942a-94856c7ec8f6",
+    "userId": "ffe25dbe-29ea-4759-8461-ed116f6739dd",
+    "name": "Location 1",
+    "transactionId": "MMFRQ-1",
+    "serialId": 1,
+    "createdAt": "2022-06-21T08:35:47.667Z",
+    "updatedAt": "2022-06-21T08:35:47.691Z"
+  }
+]
