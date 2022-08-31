@@ -1,4 +1,5 @@
 import { ButtonUI, SelectUI } from "components/CustomUI";
+import ModalUI from "components/Modal";
 import { FC } from "react";
 import { DropDownIcon } from "svgIcons";
 import "./App.css";
@@ -10,6 +11,7 @@ const App: FC<Props> = ({}: Props) => {
     <div className="">
       <ButtonUI title="Button" Icon={<DropDownIcon />} />
       <SelectUI isMulti={true} data={[]} />
+      <ModalUI open={true} />
     </div>
   );
 };
