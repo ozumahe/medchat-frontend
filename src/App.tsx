@@ -1,4 +1,4 @@
-import { ButtonUI } from "components/CustomUI";
+import { ButtonUI, SelectUI } from "components/CustomUI";
 import { FC } from "react";
 import { DropDownIcon } from "svgIcons";
 import "./App.css";
@@ -9,6 +9,7 @@ const App: FC<Props> = ({}: Props) => {
   return (
     <div className="">
       <ButtonUI title="Button" Icon={<DropDownIcon />} />
+      <SelectUI isMulti={true} data={[]} />
     </div>
   );
 };
