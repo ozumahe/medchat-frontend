@@ -1,27 +1,45 @@
-import { FC } from "react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+} from "@chakra-ui/react";
+import React, { FC, ReactFragment, ReactNode } from "react";
 
 type Props = {
   open: boolean;
+  onClose: () => void;
+  heading: string;
+  headingColor: string;
+  children: ReactNode | ReactFragment;
+  maxW?: string;
 };
 
-const ModalUI: FC<Props> = ({ open }: Props) => {
+const ModalUI: FC<Props> = ({
+  open,
+  onClose,
+  maxW,
+  children,
+  heading,
+  headingColor,
+}: Props) => {
   return (
-    <div
-      style={{
-        display: `${open ? "flex" : "none"}`,
-        position: `${open ? "fixed" : "relative"}`,
-        top: "0",
-        right: "0",
-        left: "0",
-        bottom: "0",
-        background: "rgba(0, 0, 0, 0.5)",
-        zIndex: "1",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      ModalUI
-    </div>
+    <Modal isCentered isOpen={open} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent maxW={maxW}>
+        <ModalHeader
+          textAlign="center"
+          color={headingColor}
+          fontWeight="700"
+          fontSize="32px"
+          mb=""
+        >
+          {heading}
+        </ModalHeader>
+        <ModalBody>{children}</ModalBody>
+      </ModalContent>
+    </Modal>
   );
 };
 
