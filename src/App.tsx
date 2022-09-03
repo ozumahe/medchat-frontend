@@ -1,4 +1,4 @@
-import { ButtonUI, SelectUI } from "components/CustomUI";
+import { ButtonUI, MultiSelectUI } from "components/CustomUI";
 import ModalUI from "components/Modal";
 import { FC } from "react";
 import { DropDownIcon } from "svgIcons";
@@ -11,13 +11,17 @@ interface Props {}
 const App: FC<Props> = ({}: Props) => {
   const formModalDisclosure: any = useDisclosure();
 
-  return (
-    <div className="">
-      <ButtonUI title="Button" Icon={<DropDownIcon />} />
-      <SelectUI isMulti={true} data={[]} />
+  const handleModal = () => {
+    formModalDisclosure.onOpen();
+  };
 
+  return (
+    <>
+      <ButtonUI title="Button" Icon={<DropDownIcon />} />
+      <MultiSelectUI isMulti={true} data={[]} />
+      <ButtonUI title="Open Modal" onClick={handleModal} />
       <Form {...formModalDisclosure} />
-    </div>
+    </>
   );
 };
 

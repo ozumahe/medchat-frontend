@@ -1,16 +1,17 @@
 import { FC, ReactNode } from "react";
+import { Button } from "@chakra-ui/react";
 
 type Props = {
   title: string;
   Icon?: ReactNode | JSX.Element;
+  onClick?: () => void;
 };
 
-const ButtonUI: FC<Props> = ({ title, Icon }: Props) => {
+const ButtonUI: FC<Props> = ({ title, Icon, onClick }: Props) => {
   return (
-    <button>
+    <Button rightIcon={<span>{Icon}</span>} onClick={onClick}>
       {title}
-      {Icon}
-    </button>
+    </Button>
   );
 };
 
