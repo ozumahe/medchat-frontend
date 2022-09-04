@@ -1,5 +1,5 @@
 // EQUIPMENT
-export const equipment: any = [
+export const equipments: any = [
   {
     id: "82bbb4d9-7255-4f66-8945-ccaa5cfaf4e3",
     userId: "ffe25dbe-29ea-4759-8461-ed116f6739dd",

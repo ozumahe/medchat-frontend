@@ -1,10 +1,10 @@
 import { ButtonUI, MultiSelectUI } from "components/CustomUI";
-import ModalUI from "components/Modal";
 import { FC } from "react";
 import { DropDownIcon } from "svgIcons";
-import "./App.css";
 import { useDisclosure } from "@chakra-ui/react";
 import Form from "components/Modal/Form";
+import "./App.css";
+import TableCompoment from "components/Table";
 
 interface Props {}
 
@@ -20,6 +20,7 @@ const App: FC<Props> = ({}: Props) => {
       <ButtonUI title="Button" Icon={<DropDownIcon />} />
       <MultiSelectUI isMulti={true} data={[]} />
       <ButtonUI title="Open Modal" onClick={handleModal} />
+      <TableCompoment />
       <Form {...formModalDisclosure} />
     </>
   );

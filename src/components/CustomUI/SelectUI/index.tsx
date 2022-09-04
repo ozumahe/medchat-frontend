@@ -10,9 +10,9 @@ import {
 } from "@chakra-ui/react";
 import { DropDownIcon } from "svgIcons";
 
-type Props = { label: string };
+type Props = { label: string; options: any };
 
-const SelectUI: FC<Props> = ({ label }: Props) => {
+const SelectUI: FC<Props> = ({ label, options }: Props) => {
   return (
     <Box mt="15px">
       <Text textTransform="capitalize">{label}</Text>
@@ -29,13 +29,15 @@ const SelectUI: FC<Props> = ({ label }: Props) => {
             >
               <Flex justifyContent="space-between" alignItems="center">
                 <Text>{label}</Text>
-                <Box>
+                <Box transform={isOpen ? "rotate(180deg)" : ""}>
                   <DropDownIcon />
                 </Box>
               </Flex>
             </MenuButton>
             <MenuList w="300px">
-              <MenuItem></MenuItem>
+              {options.map(({ id, name }: { id: string; name: string }) => (
+                <MenuItem key={id}>{name}</MenuItem>
+              ))}
             </MenuList>
           </>
         )}
