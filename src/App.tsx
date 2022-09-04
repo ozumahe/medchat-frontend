@@ -1,7 +1,7 @@
 import { ButtonUI, MultiSelectUI } from "components/CustomUI";
 import { FC } from "react";
 import { DropDownIcon } from "svgIcons";
-import { useDisclosure } from "@chakra-ui/react";
+import { Box, useDisclosure } from "@chakra-ui/react";
 import Form from "components/Modal/Form";
 import "./App.css";
 import TableCompoment from "components/Table";
@@ -17,9 +17,10 @@ const App: FC<Props> = ({}: Props) => {
 
   return (
     <>
-      <ButtonUI title="Button" Icon={<DropDownIcon />} />
       <MultiSelectUI isMulti={true} data={[]} />
-      <ButtonUI title="Open Modal" onClick={handleModal} />
+      <Box mt="30px">
+        <ButtonUI title="Open Modal" onClick={handleModal} />
+      </Box>
       <TableCompoment />
       <Form {...formModalDisclosure} />
     </>

@@ -25,7 +25,7 @@ const ModalUI: FC<Props> = ({
   headingColor,
 }: Props) => {
   return (
-    <Modal isCentered isOpen={open} onClose={onClose}>
+    <Modal isOpen={open} onClose={onClose}>
       <ModalOverlay />
       <ModalContent maxW={maxW}>
         <ModalHeader

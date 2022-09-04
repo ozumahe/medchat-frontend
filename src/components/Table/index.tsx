@@ -3,12 +3,11 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
+  chakra,
 } from "@chakra-ui/react";
 
 type Props = {};
@@ -37,17 +36,22 @@ const TableCompoment: FC<Props> = ({}: Props) => {
           <Tr>
             <Td>inches</Td>
             <Td>millimetres (mm)</Td>
-            <Td>25.4</Td>
-          </Tr>
-          <Tr>
-            <Td>feet</Td>
-            <Td>centimetres (cm)</Td>
-            <Td>30.48</Td>
-          </Tr>
-          <Tr>
-            <Td>yards</Td>
-            <Td>metres (m)</Td>
-            <Td>0.91444</Td>
+            <Td>Location 3</Td>
+            <Td>Sbu 3</Td>
+            <Td>millimetres (mm)</Td>
+            <Td>
+              <chakra.button
+                bg="green.100"
+                py="6px"
+                px="10px"
+                borderRadius="8px"
+                borderColor="green.500"
+                color="green.500"
+                borderWidth="2px"
+              >
+                avaliable
+              </chakra.button>
+            </Td>
           </Tr>
         </Tbody>
       </Table>

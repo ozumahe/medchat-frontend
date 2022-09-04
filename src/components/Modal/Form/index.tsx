@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SelectUI } from "components/CustomUI";
 import ModalUI from "..";
 
@@ -32,6 +32,28 @@ const statusData: StatusData[] = [
 ];
 
 const Form = ({ isOpen, onClose }: Props) => {
+  const [isRequest, setIsRequest] = useState(false);
+  const [systemTypeId, setSystemTypeId] = useState(null);
+  const [equipmentTypeId, setEquipmentTypeId] = useState(null);
+  const [sbuId, setSbuId] = useState(null);
+  const [equipmentId, setEquipmentId] = useState<{
+    id: any;
+    equipment: string;
+  }>({
+    id: null,
+    equipment: "",
+  });
+  const [status, setStatus] = useState(null);
+  const [locationId, setLocationId] = useState(null);
+
+  const handleSubmit = () => {
+    setIsRequest(true);
+
+    setTimeout(() => {
+      setIsRequest(false);
+    }, 2000);
+  };
+
   return (
     <ModalUI
       open={isOpen}
@@ -57,7 +79,11 @@ const Form = ({ isOpen, onClose }: Props) => {
                 px="20px"
               >
                 <Flex justifyContent="space-between" alignItems="center">
-                  <Text>Equipment</Text>
+                  <Text>
+                    {equipmentId.equipment
+                      ? equipmentId.equipment
+                      : "Equipment"}
+                  </Text>
                   <Box transform={isOpen ? "rotate(180deg)" : ""}>
                     <DropDownIcon />
                   </Box>
@@ -66,7 +92,12 @@ const Form = ({ isOpen, onClose }: Props) => {
               <MenuList w="300px">
                 {equipments.map(
                   ({ id, equipment }: { id: string; equipment: string }) => (
-                    <MenuItem key={id}>{equipment}</MenuItem>
+                    <MenuItem
+                      key={id}
+                      onClick={() => setEquipmentId({ id: id, equipment })}
+                    >
+                      {equipment}
+                    </MenuItem>
                   )
                 )}
               </MenuList>
@@ -139,9 +170,21 @@ const Form = ({ isOpen, onClose }: Props) => {
         value={""}
         isRequired={false}
       />
-      <Button my="20px" w="full" bg="green.400">
-        Submit
-      </Button>
+      <Flex justifyContent="flex-end">
+        <Button my="20px" w="100px" mx="10px">
+          Cancel
+        </Button>
+        <Button
+          isLoading={isRequest}
+          my="20px"
+          w="100px"
+          color="#fff"
+          bg="green.400"
+          onClick={handleSubmit}
+        >
+          Submit
+        </Button>
+      </Flex>
     </ModalUI>
   );
 };
